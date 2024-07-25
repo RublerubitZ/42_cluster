@@ -6,7 +6,7 @@
 /*   By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 19:57:40 by seku              #+#    #+#             */
-/*   Updated: 2024/06/21 20:22:27 by seku             ###   ########.fr       */
+/*   Updated: 2024/07/24 18:03:10 by seku             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-/*char	*ft_strchr(char *s, int c)
+char	*ft_strchr(char *str, int c)
 {
 	int		i;
 	char	temp;
@@ -33,28 +33,14 @@ size_t	ft_strlen(char *str)
 	i = 0;
 	temp = (char)c;
 	str_temp = (char *)str;
-	while (str_temp[i] != temp)
-	{
-		if (str_temp[i] == '\0')
-			return (NULL);
-		i++;
-	}
-	return (&str_temp[i]);
-}*/
-
-char	*ft_strchr(char *s, int c)
-{
-	int	i;
-
-	i = 0;
-	if (!s)
+	if (str == NULL)
 		return (0);
 	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i] != '\0')
+		return (&str_temp[ft_strlen(str)]);
+	while (str[i] != '\0')
 	{
-		if (s[i] == (char) c)
-			return ((char *)&s[i]);
+		if (str[i] == temp)
+			return (&str_temp[i]);
 		i++;
 	}
 	return (0);
@@ -66,12 +52,12 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	j;
 	char	*str;
 
-	if (!s1)
+	if (s1 == NULL)
 	{
 		s1 = (char *)malloc(1 * sizeof(char));
 		s1[0] = '\0';
 	}
-	if (!s1 || !s2)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	str = malloc(sizeof(char) * ((ft_strlen(s1) + ft_strlen(s2)) + 1));
 	if (str == NULL)
