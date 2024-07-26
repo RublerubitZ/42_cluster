@@ -6,7 +6,7 @@
 /*   By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 22:33:49 by seku              #+#    #+#             */
-/*   Updated: 2024/07/26 19:40:22 by seku             ###   ########.fr       */
+/*   Updated: 2024/07/26 19:41:47 by seku             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	main(int argc, char *argv[])
 {
-	print("Hello Git TEST222");
+	print("Hello Git TEST333");
 }
