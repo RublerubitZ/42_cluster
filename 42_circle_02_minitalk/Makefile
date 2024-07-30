@@ -6,61 +6,45 @@
 #    By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 23:41:20 by seku              #+#    #+#              #
-#    Updated: 2024/03/23 02:16:46 by seku             ###   ########.fr        #
+#    Updated: 2024/07/30 21:28:34 by seku             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME_SERVER	= server
-NAME_CLIENT	= client
+SERVER		= server
+CLIENT		= client
 
-PRINTF		= ft_printf
+LIBFT		= ./libft/libft.a
 
 CC		= cc
 CFLAG		= -Wall -Wextra -Werror
 
 RM		= rm -f
 
-SRCS		= server.c	\
-		  client.c	\
+SRCS_SERVER	= server.c
+SRCS_CLIENT	= client.c
 
-BNS_SRCS  =      ft_lstsize.c \
-		 ft_lstadd_back.c \
-		 ft_lstadd_front.c \
-		 ft_lstclear.c \
-		 ft_lstdelone.c \
-		 ft_lstiter.c \
-		 ft_lstlast.c \
-		 ft_lstmap.c \
-		 ft_lstnew.c
+OBJS_SERVER = $(SRCS_SERVER:%.c=%.o)
+OBJS_CLIENT = $(SRCS_CLIENT:%.c=%.o)
 
-OBJS = $(SRCS:%.c=%.o)
+all: $(SERVER) $(CLIENT)
 
-BNS_OBJS = $(BNS_SRCS:%.c=%.o)
+$(LIBFT):
+	$(MAKE) -C ./libft
 
+$(SERVER): $(OBJS_SERVER) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS_SERVER) $(LIBFT) -o server
 
-ifdef WITH_BONUS
-	OBJ_FILES = $(OBJS) $(BNS_OBJS)
-else
-	OBJ_FILES = $(OBJS)
-endif
+$(CLIENT): $(OBJS_CLIENT) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS_CLIENT) $(LIBFT) -o client
 
-all : $(NAME)
+clean:
+	$(MAKE) clean -C ./libft
+	$(RM) $(OBJS_SERVER) $(OBJS_CLIENT)
 
-$(NAME) : $(OBJ_FILES)
-	ar rcs $(NAME) $(OBJ_FILES)
+fclean: clean
+	$(MAKE) fclean -C ./libft
+	$(RM) $(SERVER) $(CLIENT)
 
-%.o : %.c
-	$(CC) $(FLAGS) -c $< -o $@
+re: fclean all
 
-bonus :
-	make WITH_BONUS=1 all
-
-clean :
-	rm -f $(OBJS) $(BNS_OBJS)
-
-fclean : clean
-	rm -f $(NAME)
-
-re : fclean all
-
-.PHONY	: all clean fclean re bonus
+.PHONY	: all clean fclean re

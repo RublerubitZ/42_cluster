@@ -6,14 +6,16 @@
 /*   By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 16:04:19 by seku              #+#    #+#             */
-/*   Updated: 2024/07/26 16:05:10 by seku             ###   ########.fr       */
+/*   Updated: 2024/07/30 23:39:51 by seku             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_MINITALK_H
-# define FT_MINITALK_H
 
-#include <signal.h>
-#include <stdlib.h>
-#include "libft/libft.h"
+#ifndef MINITALK_H
+# define MINITALK_H
+
+# include <signal.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include "libft/libft.h"
 
 #endif

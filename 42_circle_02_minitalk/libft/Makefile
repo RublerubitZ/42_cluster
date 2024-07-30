@@ -6,7 +6,7 @@
 #    By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 23:41:20 by seku              #+#    #+#              #
-#    Updated: 2024/07/26 15:20:41 by seku             ###   ########.fr        #
+#    Updated: 2024/07/30 21:31:17 by seku             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ SRCS		= ft_strlen.c		\
 		ft_print_di.c		\
 		ft_print_u.c		\
 		ft_print_xx.c		\
+		ft_isdigit_str_check.c	\
 
 # WORK PART
 

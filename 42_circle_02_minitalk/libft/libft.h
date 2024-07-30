@@ -6,7 +6,7 @@
 /*   By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:15:49 by seku              #+#    #+#             */
-/*   Updated: 2024/07/26 15:30:41 by seku             ###   ########.fr       */
+/*   Updated: 2024/07/30 21:36:39 by seku             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,8 @@ int		ft_print_p(void *addr);
 int		ft_print_di(int n);
 int		ft_print_u(unsigned int n);
 int		ft_print_xx(unsigned int n, bool case_check);
+
+// MINITALK_PRIVATE_PART
+int		ft_isdigit_str_check(char *str);
 
 #endif
