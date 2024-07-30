@@ -6,16 +6,11 @@
 /*   By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/25 22:33:49 by seku              #+#    #+#             */
-/*   Updated: 2024/07/30 21:22:53 by seku             ###   ########.fr       */
+/*   Updated: 2024/07/31 00:21:15 by seku             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-
-void	ft_sighandler_t(int handler)
-{
-	int	i;	
-}
 
 static void	print_msg(int signal)
 {
