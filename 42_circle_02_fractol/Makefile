@@ -6,12 +6,11 @@
 #    By: seku <seku@student.42gyeongsan.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 23:41:20 by seku              #+#    #+#              #
-#    Updated: 2024/07/30 21:28:34 by seku             ###   ########.fr        #
+#    Updated: 2024/09/03 17:37:08 by seku             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SERVER		= server
-CLIENT		= client
+NAME		= fractol
 
 LIBFT		= ./libft/libft.a
 
@@ -20,26 +19,27 @@ CFLAG		= -Wall -Wextra -Werror
 
 RM		= rm -f
 
-SRCS_SERVER	= server.c
-SRCS_CLIENT	= client.c
+SRCS		= fractol.c \
+		  utils.c \
+		  make_engine.c \
 
-OBJS_SERVER = $(SRCS_SERVER:%.c=%.o)
-OBJS_CLIENT = $(SRCS_CLIENT:%.c=%.o)
+OBJS = $(SRCS:%.c=%.o)
 
-all: $(SERVER) $(CLIENT)
+# MLX SETTING
+
+
+
+all: $(NAME)
 
 $(LIBFT):
 	$(MAKE) -C ./libft
 
-$(SERVER): $(OBJS_SERVER) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS_SERVER) $(LIBFT) -o server
-
-$(CLIENT): $(OBJS_CLIENT) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS_CLIENT) $(LIBFT) -o client
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o fractol
 
 clean:
 	$(MAKE) clean -C ./libft
-	$(RM) $(OBJS_SERVER) $(OBJS_CLIENT)
+	$(RM) $(OBJS) $(OBJS)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
